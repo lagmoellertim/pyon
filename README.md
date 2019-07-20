@@ -1,4 +1,7 @@
 # Pyon
+<p align="center">
+  <img src="pyon.png" />
+</p>
 
 ## Introduction
 **Pyon** (Pythonic JSON) is a Python library which allows you to **easily convert native objects into JSON objects**.
