@@ -20,7 +20,6 @@ class PyonObject:
         """
 
         object_path_list = self.__get_object_path_list(is_base_object=True)
-        print(object_path_list)
         json_object = json_generator.generate_json(object_path_list, allow_overwrite=allow_overwrite)
 
         if file is not None:
