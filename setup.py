@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name='pyon-lib',
-    version='0.1',
+    version='0.1.1',
     license='MIT License',
     author='Tim-Luca Lagmöller',
     author_email='hello@lagmoellertim.de',
