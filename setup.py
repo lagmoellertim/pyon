@@ -4,8 +4,8 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setuptools.setup(
-    name='pyon',
-    version='0.1.7',
+    name='pyon-lib',
+    version='0.1',
     license='MIT License',
     author='Tim-Luca Lagmöller',
     author_email='hello@lagmoellertim.de',
