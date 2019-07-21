@@ -1,6 +1,6 @@
 # Pyon
 <p align="center">
-  <img src="pyon.png" width="40%"/>
+  <img src="https://github.com/lagmoellertim/pyon/raw/master/pyon.png" width="40%"/>
 </p>
 
 ## Introduction
