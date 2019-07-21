@@ -1,0 +1,13 @@
+language: python
+dist: xenial
+python:
+- 3.2
+script:
+- python3 setup.py test
+after_script:
+- cd ~
+deploy:
+  provider: pypi
+  user: lagmoellertim
+  password:
+    secure: hBgZ8fykfV7UfQL+FIZHh6lkN/06X8g9eNQTUxB5LaPUsUNamVAIDuQT+QIE2Wl5mMfDHvq7dH+3u1zTgGUUoOE2eClS51PtC9Xwrz7Ww8V1V+Gt70Dq9ybw7NJGJx1AD8ImLMsIJkIvPtIEGpxVQz8XIU1HvbUl4zdA9g0/o2XNDVbeS8TV8IBLUfK0ITVjmbpHsR//462oZxEM9VcuS9ByAgNSep/rQqDZt3UgVQcrDaWGvyKlZurpQMk8W70E2rpUj56M5iMdaHuzAESy+fRgNCVD+DqhDuqDc5RcQ5oZU/SenEejTy1te53ywNY9vNqEwTzIf/KknkvJ5/WnUXapZH8aJjlMwkHDvz1THV8nW7z66fgfinowOGrRqSRYmqTfl63Us8fbE5cRhEZV/+nXM1LkONe94dbfF5Eq/u59DmmDAFshWjiu/PHyGx38i/fyMPT0xnx3CKQmZNxJpYpoRmYYAaYFkpP3Ed4xuRuKD8XcZsITiVDx8GAMiDN+1vxe0RpxyXQwlO9eNmpCdD/6MhtLOBfD5tJOSRjZNAYjBlpNgso+a7wzl/xhNJIKVQ2anuy0usCZ9/kTUm2bw4B9hI7BQKWzsaFFhxDoYcEy1PnTlF/7Y1Fs3G+FFjvs3DkVSgptI4e/TZgU3mE1u3Vvmcv4cMDpjUrtJlcysnI=

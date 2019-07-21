@@ -5,3 +5,6 @@ venv/
 dist/
 build/
 pyon.egg-info/
+pyon/tests/__pycache__/
+
+pyon/tests/tools/__pycache__/
