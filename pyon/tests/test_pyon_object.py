@@ -1,6 +1,9 @@
 import unittest
+import unittest.mock as mock
+
 import pyon
 from pyon.tests.tools.print_message import print_start
+
 
 class PyonObjectTest(unittest.TestCase):
     def test_dump_on_valid_inputs(self):

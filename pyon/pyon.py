@@ -15,7 +15,7 @@ class PyonObject:
     def dump(self, file_object=None, output_format="json", allow_overwrite=False):
         """
         Generates the JSON object
-        :param file_object: Specify a file the JSON object get written to, only returns the data when not specified
+        :param file_object: Specifies a file handler used to write the output obj. Must support a ``.write()`` method.
         :param output_format: Choose the format the object is dumped to (json, xml, yaml)
         :param allow_overwrite: Whether objects that are written later can overwrite those that were written earlier
         :return: The JSON object
