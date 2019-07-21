@@ -20,7 +20,7 @@ def parse(path):
     for path_segment in converted_path_segments:
         if path_segment in ["..", "."]:
             if path_segment == "..":
-                if len(parsed_path_segments) > 0:
+                if parsed_path_segments:
                     parsed_path_segments.pop(-1)
         else:
             parsed_path_segments.append(path_segment)
