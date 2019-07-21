@@ -4,10 +4,9 @@ python:
 - 3.7
 script:
 - python setup.py test
-after_script:
-- cd ~
-deploy:
-  provider: pypi
-  user: lagmoellertim
-  password:
-    secure: lsfGePELqhJAV8Vr0Wq+65rPscCTln+1KfxwjgVKkPbulPpsY9T/0wz6239hIk6h3MCVdOd99n/O9EYVrdqnLPMrkVWYclkYCSbjNIdcV2ZEOVuvIVZMeeBgdaaREkti+38aRyT7k4lUWHeuk+8OusMERRq9yaZwqesMbtZ1u9b1r3o3NPXYqYOWkNznmRrt+0cLkhRpBUbYsxwu8xQYm8macWDCSwTinFAYpHyOyZcxMhmNWTMrGEHwCro2RB1Ur6a37xBoifq4CGXhbmLonWjfUZWr8nEbUyiLDzbMG7FRyM/K0T8ZliBwZuLdRPqKNpEjGvvIZPbK95ldIXzMNDExuILf/pjcZFh/yAf8MARpqWVfgoLQRm81SRvHZAHSdqgPaK/FASD8FmMl9r4UKHXBvnBxzBCwX+smd01OykNAgqq/+MWemWW5JmmUoQE6QIY5AOhdrvHafmsPxrC30B0mZdzOvY5X5TvXHskv/plGD8TeolS8c/FD7qOkkNeW7wULz7uGBC0f9KSdKtj5gJSH1KDeWjZJybgXlDnbkl/E2Hugz9SBAlcftgrI3bQwlxfE7qTS54yfwrZu1YyETf//ZU2jFy48yXlkcdSXmkkyHGxhO7cZDUysOsuc9I3InVSNZ5nQUVMtWB0QZJ/vQAwTT70NLwdX9YdMPLwfFdc=
+- echo "$TRAVIS_TAG"
+- if [ -n "$TRAVIS_TAG" ]; then
+  pip3 install twine;
+  python3 setup.py sdist bdist_wheel;
+  python3 -m twine upload dist/* -u lagmoellertim -p $TWINE --skip-existing;
+  fi
