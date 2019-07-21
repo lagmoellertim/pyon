@@ -16,7 +16,11 @@ Additionally, it uses recursion in order to also **convert every connected objec
 - Python >= 3.2
 
 ## Installation
-
+The installation via pip is as easy as typing
+```sh
+pip install pyon-lib
+```
+If you want to install the newest version manually, you can also do this:
 ```sh
 git clone https://github.com/lagmoellertim/pyon.git
 
