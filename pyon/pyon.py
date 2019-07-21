@@ -24,11 +24,15 @@ class PyonObject:
         object_path_list = self.__get_object_path_list(is_base_object=True)
         json_object = json_generator.generate_json(object_path_list, allow_overwrite=allow_overwrite)
 
-        output = json_object
-        if output_format == "xml":
-            output = dicttoxml.dicttoxml(output, attr_type=False)
+        if output_format == "json":
+            output = json_object
+        elif output_format == "xml":
+            output = dicttoxml.dicttoxml(json_object, attr_type=False)
         elif output_format == "yaml":
-            output = yaml.dump(output)
+            output = yaml.dump(json_object)
+        else:
+            raise ValueError('Invalid input for output_format.\n'
+                             'Valid inputs: "json", "xml", "yaml"')
 
         if file_object is not None:
             with file_object as f:
