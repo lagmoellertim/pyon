@@ -11,10 +11,10 @@ class PyonObject:
 
         self.__pyon_object_path = path
 
-    def generate_json(self, file=None, allow_overwrite=False):
+    def generate_json(self, file_object=None, allow_overwrite=False):
         """
         Generates the JSON object
-        :param file: Specify a file the JSON object get written to, only returns the data when not specified
+        :param file_object: Specify a file the JSON object get written to, only returns the data when not specified
         :param allow_overwrite: Whether objects that are written later can overwrite those that were written earlier
         :return: The JSON object
         """
@@ -22,8 +22,8 @@ class PyonObject:
         object_path_list = self.__get_object_path_list(is_base_object=True)
         json_object = json_generator.generate_json(object_path_list, allow_overwrite=allow_overwrite)
 
-        if file is not None:
-            with file as f:
+        if file_object is not None:
+            with file_object as f:
                 f.write(json.dumps(json_object))
 
         return json_object

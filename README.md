@@ -71,7 +71,7 @@ And this is the output:
 
 ```python3
 test = Test()
-json = test.generate_json(file=open("test.json","w+"))
+json = test.generate_json(file_object=open("test.json","w+"))
 ```
 
 ### Hide certain variables
