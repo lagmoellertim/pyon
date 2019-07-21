@@ -60,7 +60,7 @@ class Test(PyonObject):
 
 ```python3
 test = Test()
-json = test.generate_json()
+json = test.dump()
 ```
 And this is the output:
 ```python3
@@ -85,7 +85,7 @@ class Test(PyonObject):
         self._var2 = 5.5
         
 test = Test()
-json = test.generate_json()
+json = test.dump()
 ```
 And this is the output:
 ```python3
@@ -110,7 +110,7 @@ class Product(PyonObject):
         self.name = name
         
 store = Store("Generic Store")
-json = store.generate_json()
+json = store.dump()
 ```
 And this is the output:
 
@@ -160,7 +160,7 @@ class Product(PyonObject):
         self.name = name
         
 store = Store("Generic Store")
-json = store.generate_json()
+json = store.dump()
 ```
 And this is the output:
 ```python3
@@ -193,7 +193,7 @@ class Test(PyonObject):
         self._var2 = 5.5
         
 test = Test()
-json = test.generate_json()
+json = test.dump()
 ```
 And this is the output:
 ```python3
@@ -204,15 +204,27 @@ And this is the output:
     }
 }
 ```
+### Different dump methods
+Pyon supports different methods for dumping the PyonObject. You can use the normal python dictionary ('json'), 'xml' or
+'yaml'.
+Here are some usage examples:
+```python3
+json = test.dump(output_format="json") # JSON is default, so you can also leave it empty
+
+xml = test.dump(output_format="xml")
+
+yaml = test.dump(output_format="yaml")
+```
 
 ### Allow Overwrite
 Finally, there is Overwrite Protection. Since Paths allow you to freely choose the location where the
 object should end up, it is possible for them to overlap. To allow / stop overwriting, you can do this:
 
 ```python3
-json = test.generate_json(allow_overwrite=True)
+json = test.dump(allow_overwrite=True)
 ```
 The default value for allow_overwrite is False
+
 
 ## Documentation
 

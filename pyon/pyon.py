@@ -1,6 +1,7 @@
 from pyon.tools import path_parser, json_generator
 import json
-
+import dicttoxml
+import yaml
 
 class PyonObject:
     def __init__(self, path=""):
@@ -11,10 +12,11 @@ class PyonObject:
 
         self.__pyon_object_path = path
 
-    def generate_json(self, file_object=None, allow_overwrite=False):
+    def dump(self, file_object=None, output_format="json", allow_overwrite=False):
         """
         Generates the JSON object
         :param file_object: Specify a file the JSON object get written to, only returns the data when not specified
+        :param output_format: Choose the format the object is dumped to (json, xml, yaml)
         :param allow_overwrite: Whether objects that are written later can overwrite those that were written earlier
         :return: The JSON object
         """
@@ -22,11 +24,20 @@ class PyonObject:
         object_path_list = self.__get_object_path_list(is_base_object=True)
         json_object = json_generator.generate_json(object_path_list, allow_overwrite=allow_overwrite)
 
+        output = json_object
+        if output_format == "xml":
+            output = dicttoxml.dicttoxml(output, attr_type=False)
+        elif output_format == "yaml":
+            output = yaml.dump(output)
+
         if file_object is not None:
             with file_object as f:
-                f.write(json.dumps(json_object))
+                file_output = output
+                if output_format == "json":
+                    file_output = json.dumps(output)
+                f.write(file_output)
 
-        return json_object
+        return output
 
     def __get_object_path_list(self, parent_path="/", is_base_object=False):
         """
