@@ -7,6 +7,12 @@ from pyon.tests.tools.print_message import print_start
 
 class PyonObjectTest(unittest.TestCase):
     def test_dump_on_valid_inputs(self):
+        """
+        Dump test input dump of validation.
+
+        Args:
+            self: (todo): write your description
+        """
         print_start("dump_on_valid_inputs")
         test_set = {
             (None, "json", False): {'test': {}},
@@ -20,6 +26,12 @@ class PyonObjectTest(unittest.TestCase):
             self.assertEqual(expected, output)
 
     def test_dump_on_invalid_inputs(self):
+        """
+        : return : py : py :
+
+        Args:
+            self: (todo): write your description
+        """
         print_start("dump_on_invalid_inputs")
         test_set = {
             (None, "", False): ValueError,
