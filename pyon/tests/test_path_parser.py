@@ -5,6 +5,12 @@ from pyon.tests.tools.print_message import print_start
 
 class PathParserTest(unittest.TestCase):
     def test_parse_on_valid_paths(self):
+        """
+        Validate on_on_valid_paths
+
+        Args:
+            self: (todo): write your description
+        """
         print_start("parse_on_valid_paths")
         test_set = {
             "/": [],
@@ -20,6 +26,12 @@ class PathParserTest(unittest.TestCase):
             self.assertEqual(parsed_path, output)
 
     def test_parse_on_invalid_paths(self):
+        """
+        : return : attr : test_parse_invalid_parser.
+
+        Args:
+            self: (todo): write your description
+        """
         print_start("parse_on_invalid_paths")
         test_set = {
             "/*": ValueError,
@@ -33,6 +45,12 @@ class PathParserTest(unittest.TestCase):
             self.assertRaises(exception, path_parser.parse, path)
 
     def test_convert_type(self):
+        """
+        Convert the test test type conversion.
+
+        Args:
+            self: (todo): write your description
+        """
         print_start("convert_type")
         test_set = [
             [["1", "2.1", "('Test')"], [1, 2.1, "('Test')"]],
@@ -46,6 +64,12 @@ class PathParserTest(unittest.TestCase):
             self.assertEqual(converted_list, output)
 
     def test_join_on_valid_paths(self):
+        """
+        Test if the test paths in a list are valid.
+
+        Args:
+            self: (todo): write your description
+        """
         print_start("join_on_valid_paths")
         test_set = [
             [["/test/", "123", "*"], "/test/123/*/"],
@@ -60,10 +84,22 @@ class PathParserTest(unittest.TestCase):
             self.assertEqual(joined_path, output)
 
     def test_insert_value(self):
+        """
+        Insert a value into the test path.
+
+        Args:
+            self: (todo): write your description
+        """
         print_start("insert_value")
 
         class TestInstance:
             def __init__(self):
+                """
+                Initialize the values of the value
+
+                Args:
+                    self: (todo): write your description
+                """
                 self.val1 = 1
                 self.val2 = 2
                 self.val3 = 3
